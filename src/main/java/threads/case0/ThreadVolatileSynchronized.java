@@ -1,4 +1,4 @@
-package javaFiles;
+package threads.case0;
 
 public class ThreadVolatileSynchronized {
     public static void main(String[] args) {

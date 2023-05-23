@@ -15,6 +15,7 @@ abstract class Box<T> {
     abstract fun add(something: T)
     abstract fun getStuff(): T
 }
+
 /*
 abstract class Box<in T> {
     abstract fun add(something: T)
@@ -25,7 +26,6 @@ abstract class Box<out T> {
 //  abstract fun add(something: T)
     abstract fun getStuff(): T
 }
-
 */
 
 
