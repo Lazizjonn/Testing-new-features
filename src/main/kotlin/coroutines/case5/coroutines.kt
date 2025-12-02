@@ -7,14 +7,14 @@ import kotlin.system.measureTimeMillis
 5.With launch
  */
 fun main() = runBlocking {
-    example5_1()
-    example5_2()
+    example51()
+    example52()
 }
 
 /**
 5.1.With launch
  */
-suspend fun example5_1() = runBlocking {
+suspend fun example51() = runBlocking {
     val time = measureTimeMillis {
         val list = ArrayList<Job>()
 
@@ -36,7 +36,7 @@ suspend fun example5_1() = runBlocking {
 /**
 5.2.With launch cancel job which is inside several async tasks
  */
-suspend fun example5_2() = runBlocking {
+fun example52() = runBlocking {
     val time = measureTimeMillis {
 
         println("Start requesting...")

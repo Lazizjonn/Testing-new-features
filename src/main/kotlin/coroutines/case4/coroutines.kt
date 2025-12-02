@@ -8,14 +8,14 @@ import kotlin.system.measureTimeMillis
 4.Async 3 request total time 3050
  */
 fun main() = runBlocking {
-    example4_1()
-    example4_2()
+    example41()
+    example42()
 }
 
 /**
 4.1.Async 3 request total time 3050, simple
  */
-suspend fun example4_1() = runBlocking {
+fun example41() = runBlocking {
     println("Start requesting...")
     val time = measureTimeMillis {
         val a1 = async { request(1000) }
@@ -36,14 +36,14 @@ suspend fun example4_1() = runBlocking {
 /**
 4.2.Async 3 request total time 3050 with ArrayList<Deferred<Int>>()
  */
-suspend fun example4_2() = runBlocking {
+fun example42() = runBlocking {
     val list = ArrayList<Deferred<Int>>()
     println("Start requesting...")
     val time = measureTimeMillis {
-        list.add(async { coroutines.case5.request(1000) })
-        val a2 = async { coroutines.case5.request(2000) }
+        list.add(async { request(1000) })
+        val a2 = async { request(2000) }
         list.add(a2)
-        val a3 = async { coroutines.case5.request(3000) }
+        val a3 = async { request(3000) }
         list.add(a3)
         val sum = list.awaitAll().sum()
         println("Sum: $sum")
